@@ -1,0 +1,24 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="fontFamily">@font/opensans_regular</item>
+    </style>
+
+    <style name="CustomDialogTheme">
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+    <style name="MyAlertDialogTheme" parent="Base.Theme.AppCompat.Light.Dialog">
+        <item name="android:colorBackground">@color/colorWhite</item>
+        <item name="android:windowBackground">@color/colorWhite</item>
+        <!--<item name="android:windowBackground">@drawable/white_rounded_blue_border_selector</item>-->
+        <item name="android:textSize">15sp</item>
+        <item name="android:fontFamily">@font/opensans_regular</item>
+        <item name="android:layout_marginHorizontal" tools:targetApi="o">10dp</item>
+        <item name="colorAccent">@color/colorPrimaryDark</item>
+    </style>
+</resources>

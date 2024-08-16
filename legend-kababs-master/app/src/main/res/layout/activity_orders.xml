@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="adapter"
+            type="com.app.legendkebabs.adapters.OrderListItemAdapter" />
+    </data>
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite"
+        android:orientation="vertical"
+        tools:context=".ui.OrdersActivity">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorDarkRed">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="My Orders"
+                android:fontFamily="@font/opensans_regular"
+                android:textSize="18sp"
+                android:textColor="@color/colorWhite"
+                android:layout_gravity="center"
+                android:id="@+id/toolbar_title" />
+        </androidx.appcompat.widget.Toolbar>
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:layout_width="match_parent"
+            android:id="@+id/pullToRefresh"
+            android:layout_weight="1"
+            android:layout_height="0dp">
+
+            <HorizontalScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_height="2px"
+                        android:background="@color/colorWhite"
+                        android:layout_width="match_parent"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorLightRed"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="70dp"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="15dp"
+                            android:paddingVertical="10dp"
+                            android:background="@drawable/white_border_background"
+                            android:textColor="@color/colorWhite"
+                            android:text="SNo"/>
+
+                        <LinearLayout
+                            android:layout_width="1dp"
+                            android:background="@color/colorWhite"
+                            android:layout_height="match_parent"/>
+
+                        <TextView
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="15dp"
+                            android:paddingVertical="10dp"
+                            android:background="@drawable/white_border_background"
+                            android:textColor="@color/colorWhite"
+                            android:text="Order No"/>
+
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="1dp"-->
+<!--                            android:background="@color/colorWhite"-->
+<!--                            android:layout_height="match_parent"/>-->
+
+<!--                        <TextView-->
+<!--                            android:layout_width="150dp"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:paddingHorizontal="15dp"-->
+<!--                            android:paddingVertical="10dp"-->
+<!--                            android:textColor="@color/colorWhite"-->
+<!--                            android:background="@drawable/white_border_background"-->
+<!--                            android:text="Order Name"/>-->
+
+                        <LinearLayout
+                            android:layout_width="1dp"
+                            android:background="@color/colorWhite"
+                            android:layout_height="match_parent"/>
+
+                        <TextView
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="15dp"
+                            android:paddingVertical="10dp"
+                            android:textColor="@color/colorWhite"
+                            android:background="@drawable/white_border_background"
+                            android:text="Date"/>
+
+                        <LinearLayout
+                            android:layout_width="1dp"
+                            android:background="@color/colorWhite"
+                            android:layout_height="match_parent"/>
+
+                        <TextView
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="15dp"
+                            android:paddingVertical="10dp"
+                            android:textColor="@color/colorWhite"
+                            android:background="@drawable/white_border_background"
+                            android:text="Status"/>
+
+                        <LinearLayout
+                            android:layout_width="1dp"
+                            android:background="@color/colorWhite"
+                            android:layout_height="match_parent"/>
+
+                        <TextView
+                            android:layout_width="80dp"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="15dp"
+                            android:paddingVertical="10dp"
+                            android:textColor="@color/colorWhite"
+                            android:background="@drawable/white_border_background"
+                            android:text="Total"/>
+
+                        <LinearLayout
+                            android:layout_width="1dp"
+                            android:background="@color/colorWhite"
+                            android:layout_height="match_parent"/>
+
+                        <TextView
+                            android:layout_width="80dp"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="15dp"
+                            android:paddingVertical="10dp"
+                            android:textColor="@color/colorWhite"
+                            android:background="@drawable/white_border_background"
+                            android:text="Action"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_height="2px"
+                        android:background="@color/colorWhite"
+                        android:layout_width="match_parent"/>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:visibility="visible"
+                        android:id="@+id/orderList"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:setAdapter="@{adapter}"
+                        tools:itemCount="20"
+                        tools:listitem="@layout/item_orders_list"/>
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <ProgressBar
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:paddingVertical="10dp"
+            android:visibility="gone"
+            android:layout_gravity="center"
+            android:indeterminateTint="@color/colorLightRed"
+            android:id="@+id/loader_pagination"/>
+    </LinearLayout>
+</layout>

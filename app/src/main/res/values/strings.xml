@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Legend Kebabs</string>
+    <string name="label_total">Total</string>
+    <string name="label_status">Status</string>
+    <string name="label_date">Date</string>
+    <string name="label_order_name">Order Name</string>
+    <string name="label_sno">SNo</string>
+    <string name="label_order_no">Order No</string>
+    <string name="label_order_detail">Order Detail</string>
+</resources>

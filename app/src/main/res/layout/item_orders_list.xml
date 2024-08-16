@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="model"
+            type="com.app.legendkebabs.data.model.OrderListItemModel.Data" />
+
+        <variable
+            name="sNo"
+            type="java.lang.String" />
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+<!--        <LinearLayout-->
+<!--            android:layout_height="1dp"-->
+<!--            android:background="@color/colorGrey"-->
+<!--            android:layout_width="match_parent"/>-->
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:background="@{model.order_status.equalsIgnoreCase(`Processing`) ? @color/colorWhite : model.order_status.equalsIgnoreCase(`Completed`) ? @color/colorGreen : model.order_status.equalsIgnoreCase(`Cancelled`) ? @color/colorRed : model.order_status.equalsIgnoreCase(`Pending`) ? @color/colorYellow : @color/colorWhite}"
+            android:layout_height="41dp">
+
+            <TextView
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/grey_border_background"
+                android:gravity="center_vertical|start"
+                android:textColor="@color/colorBlack"
+                android:ellipsize="end"
+                android:text="@{sNo}"/>
+
+            <LinearLayout
+                android:layout_width="1dp"
+                android:background="@color/colorGrey"
+                android:layout_height="match_parent"/>
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/grey_border_background"
+                android:gravity="center_vertical|start"
+                android:textColor="@color/colorBlack"
+                android:ellipsize="end"
+                android:text="@{model.order_id}"/>
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="1dp"-->
+<!--                android:background="@color/colorGrey"-->
+<!--                android:layout_height="match_parent"/>-->
+
+<!--            <TextView-->
+<!--                android:layout_width="150dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:paddingHorizontal="15dp"-->
+<!--                android:background="@drawable/grey_border_background"-->
+<!--                android:paddingVertical="10dp"-->
+<!--                android:ellipsize="end"-->
+<!--                android:gravity="center_vertical|start"-->
+<!--                android:textColor="@color/colorBlack"-->
+<!--                android:text="@{model.product_name}"/>-->
+
+            <LinearLayout
+                android:layout_width="1dp"
+                android:background="@color/colorGrey"
+                android:layout_height="match_parent"/>
+
+            <TextView
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/grey_border_background"
+                android:ellipsize="end"
+                android:gravity="center_vertical|start"
+                android:textColor="@color/colorBlack"
+                android:text="@{model.updated_at}"/>
+
+            <LinearLayout
+                android:layout_width="1dp"
+                android:background="@color/colorGrey"
+                android:layout_height="match_parent"/>
+
+            <TextView
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/grey_border_background"
+                android:ellipsize="end"
+                android:gravity="center_vertical|start"
+                android:textColor="@color/colorBlack"
+                android:text="@{model.order_status}"/>
+
+            <LinearLayout
+                android:layout_width="1dp"
+                android:background="@color/colorGrey"
+                android:layout_height="match_parent"/>
+
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/grey_border_background"
+                android:ellipsize="end"
+                android:gravity="center_vertical|start"
+                android:textColor="@color/colorBlack"
+                android:text="@{`$` + model.total_amount}"/>
+
+            <LinearLayout
+                android:layout_width="1dp"
+                android:background="@color/colorGrey"
+                android:layout_height="match_parent"/>
+
+            <TextView
+                android:id="@+id/btn_view"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/grey_border_background"
+                android:ellipsize="end"
+                android:gravity="center_vertical|start"
+                android:textColor="@color/colorBlue"
+                android:text="View"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_height="1dp"
+            android:background="@color/colorGrey"
+            android:layout_width="match_parent"/>
+    </LinearLayout>
+</layout>
